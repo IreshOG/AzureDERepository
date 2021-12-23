@@ -1,0 +1,162 @@
+Azure Data Engineering Course
+------------------------------
+
+Azure SQL Database (Learned how to use SQL database PaaS service)
+	- Provision the database
+	- Access the database using SSMS
+	- Secure the database content
+	- Perform daily operations on the database
+
+Azure Storage (ASB and ADLS Gen 2)
+	- Provision
+	- Azure Blob Storage (Its just a storage)
+	- Azure Data Lake Gen2 Storage (Its a file system)
+	- Azure Data Explorer
+	- Public Folder & Private Folder
+	- Securely access the ADLS with heterogenous Application
+		- Access Key
+		- Shared Access Signature
+		- KeyVault
+
+Azure Data Factory (ADF) - Helps to create data pipelines
+	- Provision
+	- Linked Services
+	- Pipeline
+		- Copy Data
+			- Actual Data Trf
+			- Data Conversion (Delimited -> CSV | JSON | Parquet)
+			- Polybase
+		
+		- DataFlow
+
+	- Dataflow Streams
+		- How to access multiple sources (Azure SQL database , ADLSv2, Synapse)
+		- How to perform Transformation (JOIN)
+		- How to access multiple sinks
+
+	- Creating ADF object using Author method
+	- Creating ADF object using Wizard method
+	- Invoking Builtin Spark Cluster for Debug Mode
+		
+	
+Azure Databricks
+	- Provision
+	- Create Workspace
+	- Create Cluster
+	- Create Notebooks (Scala & Python Notebooks)
+	- Integrate Storage Account to Databricks using code
+	- Integrate Synapse account to Databricks using code
+	- Create and work with TABLES(DeltaTable by default) in Databricks
+	- Job (Yet to Discuss)
+
+Azure Synapse Analytics (SQL Pool)
+	- Provisioning a synapse workspace
+	- Explore objects using Synapse Analytics Studio
+	- Types of Pool in Synapse (Serverless Pool [Default Pool]  , SQL Pool, Spark Pool)
+	- Using all pools
+		- Serverless Pool
+			- How to perform Adhoc Analysis
+			- Limitation of Serverless pool (No Internal Table)(No Self-Storage)
+		- SQL Pool
+			- External and Internal Tabes
+		- Spark Pool
+			- Notebooks
+			- Interact with Storage Accounts
+
+	- Securely access Synapse (Access Token , SAS)
+	- Bulk Uploading using COPY
+
+
+
+Revise Revise Revise
+
+
+
+
+
+Mini Project
+------------
+Create a data pipeline using ADF that can perform the following tasks:
+	a. Load the txns dataset
+	b. Filter those records whose category is Air Sports and store the same in ADLS under /transactions/airsportsOutput folder
+	c. Identify the total revenue generated based on the subcategory for AirSports Category and store the same in /transactions/outputDir (adls)
+
+How to Create a Pipeline using ADF?
+====================================
+1. Identify the source, processing engine(if applicable) and target
+2. Create Linked Service for
+		Source
+		Processing
+		Target
+3. Create Dataset object for 
+		Input 
+		Output
+4. Create Dataflow to perform Preprocessing 
+
+5. Create Pipeline to perform Dataflow activity followed by other activities
+
+6. Validate the pipeline and debug if required
+
+7. Publish the Pipeline
+
+
+
+
+Source: ADLS 
+		Name: dataforbigdata345
+		FileSystem: transactions
+		FileName and Location: txnsSmall
+
+Processing: Databricks 
+
+Preprocessing: Dataflow
+
+
+LinkedServices:
+	- Storage Account (ADLS)
+	- Databricks
+
+Create Dataflow for preprocessing 
+	Goal:   Load the data
+		Create headers
+		Filter records based on category == Air Sports
+
+
+Create a pipeline
+
+	Dataflow -----------> Databricks
+
+
+
+
+
+Notebook  (Ensure you maintain the notebook in Shared Folder)
+
+spark.conf.set(
+    "fs.azure.account.key.dataforbigdata345.dfs.core.windows.net",
+    dbutils.secrets.get(scope="adlsaccess",key="dataforbigdata345"))
+
+df = spark.read.format("csv").option("header","true").load("abfss://transactions@dataforbigdata345.dfs.core.windows.net/airsportsOutput")
+
+df.registerTempTable("txns")
+
+resultset = spark.sql("select subcategory, sum(amount) as revenue from txns group by subcategory order by revenue desc")
+
+resultset.write.format("csv").option("header","true").load("abfss://transactions@dataforbigdata345.dfs.core.windows.net/finalOutput")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+Assignment Task
+=================
+
+
+Basic Assignment 1
+
+00000000,06-26-2011,4007024,040.33,Exercise & Fitness,Cardio Machine Accessories,Clarksville,Tennessee,credit
+
+
+Tasks:
+
+1. Create a new sqlpool named retail79879
+
+2. Create an internal table named txns with the following columns
+
+txnid
+txndate --- string type
+custid
+amount
+category
+subcategory
+city
+state
+txntype
+
+3. Load the data from txns file
+
+4. Perform the following queries
+
+	A. Find the total revenue generated based on category
+	B. Find the total number and total sum of transactions done via cash
+	C. Which category of products have the highest selling
+	D. Which subcategory of products in highest category has low selling
+	

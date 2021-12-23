@@ -1,0 +1,281 @@
+Azure Data Engineer
+Trainer: Prashant Nair
+===============================================================================================
+
+
+
+Assigning the Azure Pass to all participants !!!
+
+Those who didnt create an email id in https://outlook.live.com,
+kindly create one.
+
+Please do not try to claim the pass on your own. Wait for my 
+further instructions.
+
+Thanks !!! :)
+
+
+
+1. Create Outlook Email Id
+2. Open Chrome in incognito mode
+3. Go to the following link
+	https://www.microsoftazurepass.com
+4. Click on Start.
+5. Login to your outlook account	
+6. Ensure details shown are correct
+7. Add azure pass code provided
+	QTCCBTLY3ML54YEHNO (Dont try this code - Its already redeemed !!!)
+
+   and claim the pass.
+
+8. Fill in the details
+DONE!
+
+
+
+Revision
+----------
+
+Bigdata Project Phases (Hadoop and its Ecosystem Components)
+			(Apache Spark - Unified System)
+
+1. Data Acquisition
+2. Data Preprocessing
+3. Data Transformation
+4. Data View
+5. Intelligence Layer
+
+
+Difference between Batch Processing And Realtime Processing
+
+Batch Processing			Realtime
+
+
+Dealing with HISTORICAL data            Dealing with REALTIME data    
+
+Mostly the input will be in the		The data will be stream data
+form of file        
+
+Processing may take hours !!!		Processing happens in microseconds to a second
+
+Hadoop MRv2				Apache Flink	
+Apache Spark				Apache Storm
+
+
+
+
+
+Apache Spark Streaming ------------------> Micro batch Processing
+
+
+
+
+
+
+
+
+
+
+Cloud Computing  --- NIST (National Institute of Standards and Technologies - USA)
+----------------
+
+Cloud computing is a business term.
+
+Delivery of IT or IT-enabled services over the Internet
+
+As per NIST,
+
+Cloud computing is a model that enables
+
+	UBIQUITOUS (Any network / Any web-enabled device)
+	ON-DEMAND (I can use my service anytime - 24/7/365 )
+	CONVENIENT (No third party involvement to get the resources)
+
+access to the shared pool of CONFIGURABLE computing resources that can be
+
+	RAPIDLY PROVISIONED AND RELEASED 
+
+with minimal management effort or service provider interaction.
+
+
+
+Cloud Service and Deployment Models
+-----------------------------------
+As per NIST, there exists 3 service models and 4 deployment models
+
+
+Service Models:
+
+a. IaaS (Infrastructure as a Service)
+
+	- Hardware on Demand (Charge you based pay-per-usage model)
+	- Provision yourself a Virtual Machine
+		- RAM, DISK, CPU, GPU, OS, NETWORK
+	- Deploy the VM to the user.
+
+
+b. PaaS (Platform as a Service)
+	
+	- Provides platform mostly for developers
+	- the infra side (virtual or physical) is managed by the cloud service provider	
+	- platform side application are developed and managed by cloud user.
+
+	e.g Heroku
+
+c. SaaS (Software as a Service)
+
+	- Targetted towards end user
+	- Delivers softwares
+	e.g. OneDrive, GDrive, GoogleDocs, GMail etc
+
+
+
+
+Four Deployment Models
+-----------------------
+
+1. Private Cloud
+
+	- Private setup restricted to a company/organization
+	- Here the data and the hardware is owned by the company
+	- Here all the maintenance is handled by the company
+
+2. Public Cloud
+
+	- Public service offering offered by service provider
+	- Here service provider owns the hardware
+	- Data is owned by user and service provider under some standards (ISO 9001-2000, ISO 									270001 )	
+	- Uptime / Maintenance is handled by the service provider
+	- Consumer consumes service by pay-per-use model.
+
+
+3. Hybrid Cloud
+
+	- Combination setup of Public and Private cloud
+	- e.g. Data is stored at company infra
+	       Processing is done in public cloud
+
+4. Community Cloud
+	
+	- Private Setup used geographically in multiple offices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Azure Data Solutions
+--------------------
+
+				Types of data
+					|
+	--------------------------------------------------------------------------
+	|				|					|
+Structured Data			Semi-Structured Data			Unstructured Data
+
+
+
+
+		   Data Storage | Azure Storage Account
+				|
+	----------------------------------------------------------
+	|							 |
+Standard Storage					      ADLSv2 (HDFS)
+							(Azure Data Lake Storage)
+							(Used for Analytics Operations)
+
+BLOB (Binary Large OBject) service			Meant for OLAP operations	     
+-or- Object Storage
+
+Table Service (Structured data
+		NoSQL Data)
+
+File Service (File Shares)
+
+Queue Service (Messaging Service)
+
+
+
+
+Link for Storage Explorer: https://azure.microsoft.com/en-in/features/storage-explorer/
+
+
+
+Labs:
+
+1. Created Azure Acc using Azure Pass
+2. Created a Storage Account
+3. Created a Blob Storage 
+4. Created Folder in Blob Storage and Uploaded the data
+5. How to Access Storage Account using
+	a. Microsoft Azure Account
+	b. Using Access tokens/keys
+
+
+PaaS platform -----> Azure SQL Database
+
+- This database is maintained by Azure
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
